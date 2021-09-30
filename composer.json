@@ -40,7 +40,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "RabbitMQ\\RabbitMQ\\RabbitMQServiceProvider"
+        "CoLearn\\RabbitMQ\\RabbitMQServiceProvider"
       ]
     }
   }
