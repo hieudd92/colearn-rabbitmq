@@ -1,0 +1,47 @@
+{
+  "name": "colearn/rabbitmq",
+  "description": "Follow guide https://www.rabbitmq.com/ to create a library easy to use. For Laravel!",
+  "license": "MIT",
+  "version": "1.0.0",
+  "keywords": [
+    "rabbitmq"
+  ],
+  "type": "library",
+  "authors": [
+    {
+      "name": "Đàm Đức Hiệu",
+      "email": "hieudd@elcom.com.vn"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "illuminate/support": "^6.0|^7.0|^8.0",
+    "php-amqplib/php-amqplib": "^3.0",
+    "ext-amqp": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^4.0|^5.0|^6.0",
+    "phpunit/phpunit": "^8.4|^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "CoLearn\\RabbitMQ\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "colearn\\rabbitmq\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "phpunit": "phpunit"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "colearn\\rabbitmq\\RabbitMQServiceProvider"
+      ]
+    }
+  }
+}
