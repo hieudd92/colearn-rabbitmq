@@ -147,7 +147,8 @@ class RabbitMQ
             self::close($_this);
             return json_decode(RabbitMQ::$response, true);
         } catch (\Exception $e){
-            // TODO: nothing
+            self::close($_this);
+            return null;
         }
     }
     /**
