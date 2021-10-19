@@ -97,7 +97,7 @@ class RabbitMQ
             '',
             $request->get('reply_to')
         );
-        $request->ack();
+        // $request->ack();
     }
 
     /**
