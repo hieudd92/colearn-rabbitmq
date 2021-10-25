@@ -167,7 +167,7 @@ class RabbitMQ
      * @param $stringInput
      * @return mixed
      */
-    public function declareWorkerQueueClient($_this, $name, $stringInput)
+    public static function declareWorkerQueueClient($_this, $name, $stringInput)
     {
         $queue = RabbitMQ::getQueueName($name);
         $_this->channel->queue_declare($queue, false, true, false, false);
