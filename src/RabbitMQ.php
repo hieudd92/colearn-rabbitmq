@@ -161,6 +161,21 @@ class RabbitMQ
         }
     }
 
+    /**
+     * @param $_this
+     * @param $name
+     * @param $stringInput
+     * @return mixed
+     */
+    public function declareWorkerQueueClient($_this, $name, $stringInput)
+    {
+        $queue = RabbitMQ::getQueueName($name);
+        $_this->channel->queue_declare($queue, false, true, false, false);
+        $msg = new AMQPMessage((string)$stringInput);
+        $_this->channel->basic_publish($msg, '', $queue);
+        self::close($_this);
+    }
+
     public static function close($_this=null)
     {
         if($_this != null) {
